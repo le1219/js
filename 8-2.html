@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+    <script>
+        //初始化
+        let listOfName = [
+            'APPLE',
+            'BEN',
+            'Calvin',
+            'Dior'
+        ];
+        //增加【4】
+        listOfName[4] = 'EVA';
+        console.log(listOfName);
+        //['apple','ben','calvin','dior','eva']
+        //use push增加到尾端
+        listOfName.push('flex');
+        listOfName.push('google');
+        console.log(listOfName);
+        //也可以一個push很多東西
+        //listOfName.push('flex','google');
+        //['apple','ben','calvin','dior','eva','flex','google']
+
+        //change
+        listOfName[0] = 'adom';
+        listOfName[2] = "cat";
+        console.log(listOfName);
+        //['adom','ben','cat','dior','eva','flex','google']
+
+        //delete
+        listOfName.pop();
+        console.log(listOfName);
+    </script>
+
+</head>
+
+<body>
+
+
+</body>
+
+</html>

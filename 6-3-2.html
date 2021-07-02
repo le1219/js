@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while break</title>
+    <script>
+        let count = 0;
+        while (count <= 9) {
+            if (count == 5) {
+                break;//    5的時候跳出
+            }
+            console.log(`count=${count}`)
+            count++;
+        }
+
+        let x = 3;
+        while (x < 10) {
+            if (x == 5) {
+                break;
+            }
+
+            console.log(`x = ${x}`);
+            x++;
+        }
+        //略過5
+        for (y = 1; y < 9; y++) {
+            if (y == 5) {
+                continue;
+            }
+            console.log(`y= ${y}`)
+        }
+
+        count = 0;
+        while (count < 9) {
+            count++;
+            if (count <= 5) {
+                continue;
+            }
+            console.log(`count = ${count}`)
+        }
+
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>
