@@ -25,10 +25,15 @@
                 console.log(`${i}*${j} = ${i * j}`);
             }
         }
-//99乘法表 先跑i=1 成立 到 j = 1 成立 直到 j ！= 9
-// 換 i = 2 到j = 1 成立 直到 j ！= 9 ........
+        //99乘法表 先跑i=1 成立 到 j = 1 成立 直到 j ！= 9
+        // 換 i = 2 到j = 1 成立 直到 j ！= 9 ........
 
-
+        for (let i = 1; i <= 9; i++) {
+            for (let j = 1; j <= 9; j++) {
+                document.write(`${i}*${j} = ${i * j} &nbsp;&nbsp;&nbsp;&nbsp;`);
+            }
+            document.write('<br>');
+        }
     </script>
 </head>
 
