@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <p class="myClass">你問為什麼荒謬？</p>
+    <p class="myClass">因為～</p>
+    <p class="myClass">自以為是的東西，就是荒謬</p>
+
+    <script>
+        let p = document.querySelectorAll('p');
+        p[0].style.backgroundColor = "pink";
+        p[1].innerHTML = '<span style="color:blue">因為～</span>';
+        p[2].style.lineHeight = '24px';
+        p[2].style.backgroundColor = 'blue';
+        p[2].style.color = 'white';
+        console.log(p);
+    </script>
+</body>
+
+</html>
