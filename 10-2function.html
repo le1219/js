@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+    <script>
+        //函數到變數中，變數即為函數名字
+        let say = function () {
+            console.log('HI');
+        }
+        say();
+
+        //帶參數
+        let say2 = function (name) {
+            console.log('hi~' + name)
+        }
+        say2('charley');
+
+        //有回傳值
+        let say3 = function (name) {
+            return 'hi~' + name;
+        }
+        console.log(say3('bill'));
+
+
+
+    </script>
+</head>
+
+
+<body>
+
+</body>
+
+</html>

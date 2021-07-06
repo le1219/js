@@ -35,6 +35,24 @@
         //delete
         listOfName.pop();
         console.log(listOfName);
+        //['adom','ben','cat','dior','eva','flex']
+        listOfName.pop();
+        console.log(listOfName);
+        //['adom','ben','cat','dior','eva']
+
+        //delete and let
+        let name = listOfName.pop();
+        console.log(name);//eva
+        console.log(listOfName)//['adom','ben','cat','dior']
+
+        //del 1st .shift()
+        listOfName.shift();
+        console.log(listOfName);//["BEN", "cat", "Dior"]
+
+        //刪除尾端 放到前面
+        name = listOfName.pop();
+        listOfName.unshift(name);
+        console.log(listOfName)
     </script>
 
 </head>

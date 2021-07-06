@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>person</title>
+
+
+</head>
+
+
+<body>
+
+    <script>
+        //function 這個關鍵字建立（class）
+        let person = function (name, gender, age) {
+            this.name = name;
+            this.gender = gender;
+            this.age = age;
+
+            this.getAge = function () {
+                return this.age;
+            }
+        }
+        //用new 關鍵字實體化（變成obj）
+        let person01 = new person('alice', 'F', 22);
+        let person02 = new person('BBCO', 'M', 33);
+        console.log(person01.name);
+        console.log(person02.name);
+
+        //取得person 的 age值
+        console.log(person01.getAge());
+        console.log(person02.getAge());
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math random</title>
+    <script>
+        //random 0-0.99999999999
+        console.log(Math.random());
+        console.log(Math.random());
+        console.log(Math.random());
+        console.log(Math.random());
+        console.log(Math.random() + 1);
+
+        //隨機點餐
+        let arrMeal = ['MCDONALD', 'KFC', "PIZZAHUT", "MOS", "BURGERKING", "50"]
+        let idxRandom = Math.floor(Math.random() * 5);
+        console.log(idxRandom);
+
+        document.write('餐廳有:<br>');
+        for (let i = 0; i < arrMeal.length; i++) {
+            document.write('~' + arrMeal[i] + '<br>');
+        }
+        document.write(`DINNER IS: ${arrMeal[idxRandom]}`);
+
+        //有沒有
+        let ans = ['可以', '不可以']
+        let ansXrandom = Math.floor(Math.random() * 1);
+
+        document.write('今晚吃不吃派克:<br>');
+        for (j = 0; j < ans.length; j++) {
+            document.write('~' + ans[j] + '<br>');
+        }
+        document.write(`今晚吃不吃派克:${ans[ansXrandom]}`);
+
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>

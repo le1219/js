@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json</title>
+    <script>
+        //初始化
+        let objPerson = {
+            name: 'Bill',
+            age: 25,
+            hairColor: 'black',
+            skinColor: 'beige'
+        };
+
+        //給他屬性 is had have 都可布林有關
+        objPerson.hadShoes = true;
+        objPerson.isWoken = true;
+
+        //修改屬性
+        objPerson.age = 26;
+
+        //del
+        delete objPerson.skinColor;
+
+        //obj-> json(str)
+        let strJson = JSON.stringify(objPerson);
+
+        console.log(strJson);
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>

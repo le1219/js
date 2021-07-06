@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+
+</head>
+
+<script>
+    //找bill
+    let arr = ['alex', 'bill'];
+
+    let str = '今天7月5號';
+    let str1 = '今天7/5';
+
+    if (arr.indexOf('bill') !== -1) {//因為不等於-1 是找到的意思
+        alert('got it');
+    }
+    else {
+        alert(`no`);
+    }
+    //找月
+    if (str.indexOf('月') > -1) {
+        alert(`yes`)
+    } else {
+        alert('no');
+    }
+
+
+    if (str1.indexOf('/') > -1) {
+        alert(`yes`);
+    } else {
+        alert('no');
+    }
+</script>
+
+<body>
+
+
+</body>
+
+</html>
