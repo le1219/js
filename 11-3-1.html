@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeOut</title>
+    <script>
+        //3s跳出訊息 yo～
+        setTimeout(function () {
+            document.write('YO~');
+        }, 3000);
+
+        //setTimeout
+        function getMessage() {
+            document.write('Man ~  ');
+        }
+        setTimeout(getMessage, 4000);
+
+        //自帶參數
+        function getMessage2(greeting, name) {
+            document.write(`${greeting}${name}`);
+        }
+        setTimeout(getMessage2, 8000, 'hi! ', 'charley')
+    </script>
+</head>
+
+
+<body>
+
+
+
+</body>
+
+</html>

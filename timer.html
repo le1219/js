@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="start_btn" onclick="start() ">start</button>
+    <button id="stop_btn" onclick="stop()">stop</button>
+    <input type="text" id="txt" value="">
+
+    <script>
+        //count = 500
+        //start();-50/2000ms
+        //stop()->stop
+
+        let count = 500;
+        let t;
+
+        function start() {
+            t = setInterval(function () {
+                document.querySelector('#txt').value = count;
+                count = count - 50;
+            }, 1000);
+            document.querySelector('#start_btn').setAttribute('disabled', '');
+            document.querySelector('#stop_btn').removeAttribute('disabled')
+
+        }
+        function stop() {
+            clearInterval(t);
+            document.querySelector('#stop_btn').setAttribute('disabled', '');
+            document.querySelector('#start_btn').removeAttribute('disabled')
+        }
+
+        // let count = 500;
+        // let t;
+        // function counter() {
+        //     count -= 5;
+        //     document.querySelector('#txt').value = count;
+        // }
+
+        // function start() {
+        //     t = setInterval(function () {
+        //         counter();
+        //     }, 1000);
+
+        // }
+        // function stop() {
+        //     clearInterval(t);
+        // }
+
+
+
+
+
+
+        // $(function () {
+        //     let count = 500;
+        //     $('#start_btn').click(function () {
+        //         count = count - 50;
+        //         $('#txt').val(count);
+        //         console.log($('#txt').val());
+        //     })
+
+        //     let count = 500;
+
+        //     function counter(charley) {
+
+        //         console.log(charley);
+        //     }
+
+        //     $(案紐1).click(涼拌料理(魚, 醬油, 烏醋));
+
+
+        //     $(案紐2).click(涼拌料理(豆干, 辣椒, 蒜頭));
+
+
+
+
+        // });
+
+
+
+
+    </script>
+
+</body>
+
+</html>

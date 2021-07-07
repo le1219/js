@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="start_btn" onclick="start() ">start</button>
+    <button id="stop_btn" onclick="stop()">stop</button>
+    <input type="text" id="txt" value="">
+    <button id="start_btn1" onclick="start1() ">start</button>
+    <button id="stop_btn1" onclick="stop1()">stop</button>
+    <input type="text" id="txt1" value="">
+
+    <script>
+
+        let count = 0;
+        let time;
+
+        function counter() {
+            document.querySelector('#txt').value = count;
+            if (count < 20) {
+                count += 2;
+            }
+
+        }
+
+        function start() {
+
+            time = setInterval(function () {
+                counter();
+            }, 1000);
+
+            document.querySelector('#start_btn').setAttribute('disabled', '');
+            document.querySelector('#stop_btn').removeAttribute('disabled');
+        }
+
+        function stop() {
+            clearInterval(time);
+            document.querySelector('#stop_btn').setAttribute('disabled', '');
+            document.querySelector('#start_btn').removeAttribute('disabled');
+        }
+
+
+        let a_count = 0;
+        let t;
+
+        function count_a() {
+            document.querySelector('#txt1').value = a_count;
+            a_count += 2;
+        }
+        function start1() {
+            t = setInterval(function () {
+                count_a()
+            }, 1000);
+            document.querySelector('#start_btn1').setAttribute('disabled', '')
+            document.querySelector('#stop_btn1').removeAttribute('disabled')
+        }
+        function stop1() {
+            clearInterval(t)
+        }
+        document.querySelector('#stop_btn1').setAttribute('disabled', '')
+        document.querySelector('#start_btn1').removeAttribute('disabled')
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+
+</head>
+
+
+<body>
+    <button onclick="startCount()" id="btn_start">start</button>
+    <input type="text" id=txt value="">
+    <button onclick="stopCount()" id="btn_stop">stop</button>
+
+    <script>
+        //累加數字的變數
+        let countNum = 0;
+
+        //clearInterval()
+        let t;
+
+        //累加用的函式
+        function count() {
+            //把當前的count值 放到 id=‘txt’value
+            document.querySelector('input#txt').value = countNum;
+
+            countNum = countNum + 1;
+
+
+        }
+        //start
+        function startCount() {
+            t = setInterval(function () {
+                count();
+            }, 1000);
+            //start btn 增加disable屬性
+            document.querySelector('button#btn_start').setAttribute('disabled', '');
+
+            //把stop移出disabled屬性
+            document.querySelector('button#btn_stop').removeAttribute('disabled');
+
+        }
+        //stop
+        function stopCount() {
+            clearInterval(t);
+
+            //把stat btn移出disabled屬性
+            document.querySelector('button#btn_start').removeAttribute('disabled')
+            //把stopbtn增加disabled
+            document.querySelector('button#btn_stop').setAttribute('disable', '');
+
+        }
+
+    </script>
+</body>
+
+</html>

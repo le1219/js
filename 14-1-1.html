@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //目的：想新增一個div用JS的方式
+
+        //let名字 = div
+        let newDiv = document.createElement('div');
+        //指定屬性
+        newDiv.id = 'box1';
+        newDiv.className = 'box';
+        newDiv.style.width = '100px';
+        newDiv.style.height = '100px';
+        newDiv.style.backgroundColor = 'blue';
+
+        //建立文字節點
+        let textNode = document.createTextNode('HALO~');
+        //透過.appendchild加入<>halo~<>
+        newDiv.appendChild(textNode);
+        //透過document.body.appendChild加入上述
+        document.body.appendChild(newDiv);
+
+        let btn = document.createElement('button');
+
+        let textNde = document.createTextNode('click');
+        btn.appendChild(textNde);
+        document.body.appendChild(btn);
+
+    </script>
+</body>
+
+</html>

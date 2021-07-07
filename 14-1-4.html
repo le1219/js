@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id='myList'>
+        <li>ITEM 01</li>
+        <li>ITEM 02</li>
+        <li>ITEM 03</li>
+    </ul>
+
+    <script>
+        //目的：中途新增一個節點
+
+        let myList = document.querySelector('ul#myList');
+
+        let oldNode = document.querySelectorAll('li')[1];
+
+        let newNode = document.createElement('li');
+
+        let textNode = document.createTextNode('halo');
+
+        newNode.appendChild(textNode);
+
+        myList.replaceChild(newNode, oldNode);
+
+
+
+    </script>
+</body>
+
+</html>

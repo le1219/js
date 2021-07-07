@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+
+</head>
+
+
+<body>
+    <button id='btn' style="width: 200px;height:200px">按下後改變文字</button>
+    <hr>
+    <div style="width: 150px;height: 100px;border:1px solid">滑鼠經過的時候</div>
+    <hr>
+    <img class="cat" src="https://storage.googleapis.com/www-cw-com-tw/article/201810/article-5bd182cf13ebb.jpg" alt=""
+        style="width: 250px;height: 200px;">
+    <img class="cat1" src="https://storage.googleapis.com/www-cw-com-tw/article/201810/article-5bd182cf13ebb.jpg" alt=""
+        style="width: 250px;height: 200px;">
+
+    <script>
+        //event.target = this
+        document.querySelector('button#btn').addEventListener('click', function (event) {
+            event.target.innerText = '改變了'
+        });
+
+        //加兩個事件
+        let div = document.querySelector('div');
+        div.addEventListener('mousemove', function (event) {
+            this.style.backgroundColor = 'pink';
+        })
+        div.addEventListener('mouseout', function () {
+            event.target.style.backgroundColor = 'green';
+        })
+
+        //對img.cat註冊滑鼠移入事件->賦予特性
+        document.querySelector('img.cat').addEventListener('mousemove', function (event) {
+            this.setAttribute('src', 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/collage-1557824150.jpg?crop=0.444xw:0.888xh;0.540xw,0&resize=640:*')
+        })
+
+        //移出移入
+        let aa = document.querySelector('img.cat1');
+        aa.addEventListener('mousemove', function (event) {
+            this.setAttribute('src', "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/collage-1557824150.jpg?crop=0.444xw:0.888xh;0.540xw,0&resize=640:*");
+        })
+        aa.addEventListener('mouseout', function () {
+            this.setAttribute('src', src = "https://storage.googleapis.com/www-cw-com-tw/article/201810/article-5bd182cf13ebb.jpg");
+        })
+    </script>
+</body>
+
+</html>
