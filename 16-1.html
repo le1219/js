@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML</title>
+</head>
+
+<body>
+    <input type="text" id="url" placeholder="請輸入LINE 貼圖url" style="width: 250px;">
+    <button id="btn_request">取得LINE 貼圖</button>
+    <ul id="myList"></ul>
+
+    <script>
+        //  取得JSON字串
+        document.querySelector('button#btn_request').addEventListener('click', function (event) {
+
+            //  取得url
+            let url = document.querySelector('input#url').value;
+
+            //url空就不執行
+            if (url == "") {
+                alert('請輸入網址');
+                return false;
+            }
+            let xhr = new XMLHttpRequest();
+            xhr.open('get', 'http://darreninfo.cc:5003/linesticker?url=' + url);
+            xhr.send();
+
+            xhr.onloadend = function () {
+                console.log('連線結束');
+
+            };
+            xhr.onload = function () {
+                console.log('連線完成');
+
+                //回傳字串
+                console.log(this.responseText);
+
+                //回傳JSON 轉為obj
+                let obj = JSON.parse(this.responseText);
+
+                //回傳成功把貼圖顯示在網頁
+                if (obj['success']) {
+
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>plz enter number(5-10)</p>
+    <input type="text" id='demo'>
+    <button type="button" id="btn_test">TEST</button>
+    <p id="p01"></p>
+
+    <script>
+        //按鈕為click事件
+        document.querySelector('button#btn_test').addEventListener('click', function (event) {
+            //取得P 並清空
+            let message = document.getElementById('p01');
+            message.innerHTML = '';
+
+            // 取得input元素，同時透過try catch 判斷
+            let x = document.getElementById('demo').value;
+            try {
+                if (x == '') throw '欄位為空';
+                if (isNaN(x)) throw '不是數字';
+
+                //Number()可以將‘1’，‘2’，‘3’的字元 轉成數字
+                x = Number(x);
+                if (x < 5) throw '小於 5'
+                if (x > 10) throw '大於10'
+
+                alert('輸入正確');
+
+            } catch (errorMessage) {
+                message.innerHTML = '輸入錯誤： ' + errorMessage;
+            } finally {
+                //無論是不是正確，都會執行finally
+                document.getElementById('demo').value = '';
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>

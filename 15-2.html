@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check</title>
+</head>
+
+<body>
+    <form action="" id="myForm" method="post">
+        <label for="">您的身分證號：</label>
+        <input type="text" id="idNum" value="">
+        <input type="submit" id="btn" value="檢查">
+    </form>
+
+    <script>
+        document.querySelector('input#btn').addEventListener('click', function () {
+            //event.preventDefault()只作觸發用
+            event.preventDefault();
+
+            let input = document.querySelector('input#idNum');
+            let re = /^[A-Z][1-2]\d{8}$/
+            let match = null;
+            if (re.test(input.value)) {
+                alert('號碼正確');
+
+            } else {
+                alert('號碼錯誤');
+            }
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>

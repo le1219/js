@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check</title>
+</head>
+
+<body>
+
+
+    <script>
+        //re =Regular Expression
+
+        //re.test() =>測試字串是否成功配對 true false
+        let str01 = 'cccA0001';
+        let re01 = /A[0-9]+/;
+        if (re01.test(str01)) {
+            console.log(`re.test(str) 回傳結果為：true`)
+        } else {
+            console.log(`re.test(str) 回傳結果為：false`)
+        }
+
+        let str1 = 'H121945671';
+        let re1 = /^[A-Z]\d{9}$/;
+        if (re1.test(str1)) {
+            console.log(true)
+        } else { console.log(false) }
+
+        let str02 = 'y234156718';
+        let re02 = /^[A-Z]\d{9}$/;//嚴謹的^...$所以上面不通過 
+        if (re02.test(str02)) {
+            console.log(`re.test(str) 回傳結果為：true`)
+        } else {
+            console.log(`re.test(str) 回傳結果為：false`)
+        }
+
+        //re03.exec()
+        let str03 = `A0001,B0978,X9487,Z5432`;
+        let re03 = /[A-Z][0-9]+/g;
+        let match03 = null;
+        while ((match03 = re03.exec(str03)) !== null) {
+            console.log(match03[0]);
+        }
+
+
+        /**
+         * string.split(re05)
+        92
+          * 以 re05 作為分割文字的字串或字元，轉為陣列型態
+        */
+        let str05 = `如何讓你遇見我 在我最美麗的時刻
+為這
+我已在佛前 求了五百年
+ 求他讓我們結一段塵緣 
+ 佛於是把我化作一棵樹 
+ 長在你必經的路旁 
+ 陽光下慎重地開滿了花 
+ 朵朵都是我前世的盼望 
+ 當你走近 請你細聽 
+ 那顫抖的葉是我等待的熱情 
+ 而當你終於無視地走過 
+ 在你身後落了一地的 
+ 朋友啊 那不是花瓣
+ 是我凋零的心
+——席慕蓉《一朵開花的樹》`; //將文字以指定字元、字串或符號進行切割，建立陣列 
+        let re05 = /\n|,|\.|，|。|!/;
+        //切割成陣列
+        arr05 = str05.split(re05);
+        93
+
+
+        //移除陣列當中的空字串 (使用 delete) 
+        for (let key in arr05) {
+            //若是移除，當前 key 所代表的 value，會變成 undefined
+            if (arr05[key] == '') delete arr05[key];
+        }
+        /**
+         * 建立暫存的空陣列arrTmp
+         * 將原先arr05的值，寫入arrTmp
+         * 之後再取替
+         */
+        let arrTmp = [];
+        for (let value of arr05) {
+            if (value != undefined) arrTmp.push(value);
+        }
+
+        //把整理好的arrTmp 變成arr05
+        arr05 = arrTmp;
+
+        //display arr05
+        console.log(arr05);
+
+
+    </script>
+</body>
+
+</html>
